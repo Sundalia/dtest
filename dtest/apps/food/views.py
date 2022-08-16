@@ -22,4 +22,4 @@ class FoodViewSet(viewsets.ModelViewSet):
 
 
 def index(request):
-    return HttpResponse("HELLOY, YOPTE")
+    return HttpResponse("HELLOY")
