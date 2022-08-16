@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework import routers
-from .views import FoodViewSet, FoodCategoryViewSet
+from .views import FoodCategoryViewSet
 from . import views
 
 router_v1 = routers.DefaultRouter()
