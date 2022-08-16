@@ -16,10 +16,5 @@ class FoodCategoryViewSet(viewsets.ModelViewSet):
         return queryset
 
 
-class FoodViewSet(viewsets.ModelViewSet):
-    queryset = Food.objects.filter(is_publish=True).select_related()
-    serializer_class = FoodSerializer
-
-
 def index(request):
     return HttpResponse("HELLOY")
