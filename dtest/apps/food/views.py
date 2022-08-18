@@ -7,12 +7,9 @@ from .models import Food, FoodCategory, FoodSerializer, FoodListSerializer
 
 class FoodCategoryViewSet(viewsets.ModelViewSet):
     serializer_class = FoodListSerializer
-
-    def get_queryset(self):
-        queryset = FoodCategory.objects.prefetch_related(
+    queryset = FoodCategory.objects.prefetch_related(
             Prefetch('food', queryset=Food.objects.filter(is_publish=True))
         )
-        return queryset
 
 
 def index(request):
