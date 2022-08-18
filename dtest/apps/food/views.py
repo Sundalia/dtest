@@ -10,7 +10,7 @@ class FoodCategoryViewSet(viewsets.ModelViewSet):
     serializer_class = FoodListSerializer
 
     def get_queryset(self):
-        queryset = FoodCategory.objects.filter(food__is_publish=True).prefetch_related(
+        queryset = FoodCategory.objects.prefetch_related(
             Prefetch('food', queryset=Food.objects.filter(is_publish=True))
         )
         return queryset
