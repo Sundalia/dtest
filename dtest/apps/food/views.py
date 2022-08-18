@@ -6,7 +6,6 @@ from .models import Food, FoodCategory, FoodSerializer, FoodListSerializer
 
 
 class FoodCategoryViewSet(viewsets.ModelViewSet):
-    queryset = FoodCategory.objects.all()
     serializer_class = FoodListSerializer
 
     def get_queryset(self):
